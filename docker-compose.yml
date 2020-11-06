@@ -14,7 +14,6 @@ services:
             - SERVER_PORT=8000
         depends_on:
             - mariaDB
-            - phpmyadmin
         restart: unless-stopped
         cpus: 1
         mem_limit: 500M
