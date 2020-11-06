@@ -1,15 +1,20 @@
 #!/bin/bash
 
+while [[ True ]]; do
 
-nc -z $DATABASE_HOST 3306 >/dev/null 2>&1
+	nc -z $DATABASE_HOST 3306 >/dev/null 2>&1
 
-if [[ $? -eq 0 ]]; then
-	echo " [+] DATABASE CONNECTED [ $DATABASE_HOST ]"
-else
-	echo " [!] ERROR | DATABASE NOT CONNECTED [ $DATABASE_HOST ] ... WAIT 10 SECS"
-	sleep 10
-	exit
-fi
+	if [[ $? -eq 0 ]]; then
+		echo " [+] DATABASE CONNECTED [ $DATABASE_HOST ]"
+		break
+	else
+		echo " [!] ERROR | DATABASE NOT CONNECTED [ $DATABASE_HOST ] ... WAIT 10 SECS"
+		sleep 10
+	fi
+
+	sleep 1
+	
+done
 
 
 echo "============================================================"
