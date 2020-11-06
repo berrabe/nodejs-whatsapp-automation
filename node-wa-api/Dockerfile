@@ -9,6 +9,8 @@ ENV SERVER_URL localhost
 ENV SERVER_PORT 8000
 
 
+WORKDIR /app
+
 
 RUN  apt update \
      && apt install -y wget gnupg ca-certificates python3 make autoconf gcc g++ \
@@ -17,15 +19,11 @@ RUN  apt update \
      && apt update \
      && apt install -y google-chrome-stable \
      && rm -rf /var/lib/apt/lists/* \
-     && wget --quiet https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -O /usr/sbin/wait-for-it.sh \
-     && chmod +x /usr/sbin/wait-for-it.sh
+     && wget --quiet https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -O ./wait-for-it.sh \
+     && chmod +x ./wait-for-it.sh
 
 
-# ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /usr/local/bin/dumb-init
-# RUN chmod +x /usr/local/bin/dumb-init
 
-
-WORKDIR /app
 COPY source/ .
 RUN npm install
 
