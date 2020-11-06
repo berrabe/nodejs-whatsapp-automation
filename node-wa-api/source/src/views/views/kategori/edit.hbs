@@ -1,0 +1,64 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Tambah kategori</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item ">kategori</li>
+              <li class="breadcrumb-item active">Tambah</li>
+              
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+
+      <section class="content">
+        <div class="container-fluid">
+           <div class="row">
+          <!-- Left col -->
+          <div class="col-md-6">
+            <!-- MAP & BOX PANE -->
+            <!-- TABLE: LATEST ORDERS -->
+             <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Add</h3>
+              </div>
+              <div class="card-body">
+                <!-- Date dd/mm/yyyy -->
+                <form action="../update" method="post">
+                <input name="id" type="hidden" value="{{{results.id}}}">
+                <div class="form-group">
+                  <label>Nama</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-list-alt"></i></span>
+                    </div>
+                  
+                    <input name="nama_kategori" type="text" class="form-control" value="{{results.kategori_name}}">
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+
+
+                <!-- /.form group -->
+            <button type="submit" class="form-control btn btn-info">Simpan</button>
+ 
+              </div>
+              </form>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          </div>
+        </div>
+      </section>

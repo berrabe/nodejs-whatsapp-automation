@@ -1,0 +1,107 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Tambah kontak</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item ">kontak</li>
+              <li class="breadcrumb-item active">Tambah</li>
+              
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+
+      <section class="content">
+        <div class="container-fluid">
+           <div class="row">
+          <!-- Left col -->
+          <div class="col-md-6">
+            <!-- MAP & BOX PANE -->
+            <!-- TABLE: LATEST ORDERS -->
+             <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Add</h3>
+              </div>
+              <div class="card-body">
+                <!-- Date dd/mm/yyyy -->
+                <form action="./simpan" method="post">
+               
+                <div class="form-group">
+                  <label>Nama</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far "></i></span>
+                    </div>
+                    <input name="kontak_name" type="text" required class="form-control" placeholder="example : david ">
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+                 <div class="form-group">
+                  <label>Nomor Whatsapp</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far "></i></span>
+                    </div>
+                    <input name="phone_number" type="text" class="form-control" required placeholder="example : 6289536103xxx" >
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+
+                 <div class="form-group">
+                  <label>Type Phone (optional)</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far "></i></span>
+                    </div>
+                   <select name="phone_type" class="form-control" id="">
+                     <option value="Mobile">Mobile</option>
+                     <option value="Selular">Selular</option>
+                   </select>
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+                 <div class="form-group">
+                  <label>Kategori</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far "></i></span>
+                    </div>
+                    <select name="kategori"  id="" class="form-control">
+                      <option value="">Pilih kategori kontak</option>
+                      {{#each kategoris}}
+                      <option value="{{{id}}}">{{{kategori_name}}}</option>
+                      {{/each}}
+                    </select>
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+
+
+            <button type="submit" class="form-control btn btn-info">Simpan</button>
+ 
+              </div>
+              </form>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          </div>
+        </div>
+      </section>

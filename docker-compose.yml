@@ -1,0 +1,46 @@
+version: '2.2'
+
+services:
+    whatsapp:
+        image: berrabee/node-whatsapp
+        ports:
+            - 8000:8000
+        environment:
+            - DATABASE_HOST=mariaDB
+            - DATABASE_USER=root
+            - DATABASE_PASSWORD=berrabe
+            - DATABASE_NAME=whatsapp_berrabe
+            - SERVER_URL=localhost
+            - SERVER_PORT=8000
+        depends_on:
+            - mariaDB
+            - phpmyadmin
+        restart: unless-stopped
+        cpus: 1
+        mem_limit: 500M
+        memswap_limit: 500M
+
+    mariaDB:
+        image: berrabee/node-whatsapp-db
+        volumes:
+            - ./db:/var/lib/mysql:rw
+        environment:
+            - MYSQL_ROOT_PASSWORD=berrabe
+            - WHATSAPP_DB_NAME=whatsapp_berrabe
+        restart: unless-stopped
+        cpus: 0.5
+        mem_limit: 200M
+        memswap_limit: 200M
+
+    phpmyadmin:
+        image: mhzawadi/phpmyadmin
+        ports:
+            - "8081:80"
+        environment:        
+            - PMA_HOST=mariaDB
+        depends_on:
+            - mariaDB
+        restart: unless-stopped
+        cpus: 0.5
+        mem_limit: 200M
+        memswap_limit: 200M

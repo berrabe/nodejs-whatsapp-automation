@@ -1,0 +1,85 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">chat</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">chat</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+
+      <section class="content">
+        <div class="container-fluid">
+           <div class="row">
+          <!-- Left col -->
+          <div class="col-md-12">
+            <!-- MAP & BOX PANE -->
+            <!-- TABLE: LATEST ORDERS -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">chat Data</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+             <div class="col-md-8">
+                 <a href="/chat/add" class="btn btn-info btn-sm">Tambah</a>
+              </div>
+                <div class="table-responsive">
+                  <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>chat ID</th>
+                      <th>Tujuan</th>
+                      <th>Pesan</th>
+                      <th>Action</th>
+                    </tr>
+                    </thead>
+                   <tbody>
+                     {{#each results}}
+                      <tr>
+                        <td>{{ id_chat }}</td>
+                        <td>{{ tujuan }}</td>
+                        <td>{{ keterangan }}</td>
+                        <td>
+              {{!--             <a href="chat/edit/{{chat_id}}" class="btn btn-sm btn-info edit" >Edit</a> --}}
+                          <a href="chat/hapus/{{chat_id}}" class="btn btn-sm btn-danger delete" data-id="{{ chat_id }}">Delete</a>
+                        </td>
+                      </tr>
+                      {{/each}}
+                   </tbody>
+                  </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              {{!-- <div class="card-footer clearfix">
+                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+              </div> --}}
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          </div>
+        </div>
+      </section>

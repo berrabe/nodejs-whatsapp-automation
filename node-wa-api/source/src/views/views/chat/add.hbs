@@ -1,0 +1,96 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Tambah chat</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item ">chat</li>
+              <li class="breadcrumb-item active">Tambah</li>
+              
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+
+      <section class="content">
+        <div class="container-fluid">
+           <div class="row">
+          <!-- Left col -->
+          <div class="col-md-6">
+            <!-- MAP & BOX PANE -->
+            <!-- TABLE: LATEST ORDERS -->
+             <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Add</h3>
+              </div>
+              <div class="card-body">
+                <!-- Date dd/mm/yyyy -->
+                <form action="./simpan" method="post">
+                
+                <div class="form-group">
+                  <label>Device</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                    </div>
+                    <select class="form-control" name="device" id="">
+                      <option value="">Pilih device anda</option>
+                      {{#each users}}
+                      <option value="{{{id}}}">{{{nama_device}}}</option>
+                      {{/each}}
+                    </select>
+                    {{!-- <input name="tujuan" type="text" class="form-control" placeholder="contoh : 62895361034xxx" > --}}
+                  </div>
+                  <!-- /.input group -->
+                </div>
+
+                <div class="form-group">
+                  <label>Tujuan</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                    </div>
+                    {{!-- <input name="tujuan" type="text" class="form-control" placeholder="contoh : 62895361034xxx" > --}}
+                  <select name="tujuan" class="form-control select2 "multiple="multiple" data-placeholder="Masukkan Tujuan Chat" >
+                  {{#each kontaks}} <option value="{{{id_kontak}}}">{{{kontak_name}}}</option>{{/each}}
+                  </select>
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+
+
+                <!-- phone mask -->
+                <div class="form-group">
+                  <label>Pesan:</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas "></i></span>
+                    </div>
+                    <textarea name="pesan" type="text" class="form-control" ></textarea>
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+            <button type="submit" class="form-control btn btn-info">Simpan</button>
+ 
+              </div>
+              </form>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          </div>
+        </div>
+      </section>
